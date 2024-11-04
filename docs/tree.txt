@@ -1,0 +1,13 @@
+sql/
+├── schema/
+│   └── create_schema.sql
+├── tables/
+│   ├── create_businesses_table.sql
+│   ├── create_business_hours_table.sql
+│   ├── ...
+├── views/
+│   └── business_search_view.sql
+├── procedures/
+│   └── usp_upsert_business.sql
+└── data/
+    └── insert_material_categories.sql

@@ -1,0 +1,11 @@
+CREATE TABLE recycling.BusinessAccounts (
+    AccountID INT IDENTITY(1,1) PRIMARY KEY,
+    BusinessID INT UNIQUE FOREIGN KEY REFERENCES recycling.Businesses(BusinessID),
+    Email NVARCHAR(255) NOT NULL UNIQUE,
+    IsEmailVerified BIT DEFAULT 0,
+    VerificationDate DATETIME2,
+    LastLoginDate DATETIME2,
+    AccountStatus NVARCHAR(20) DEFAULT 'PENDING', -- PENDING, ACTIVE, SUSPENDED
+    CreatedDate DATETIME2 DEFAULT SYSUTCDATETIME(),
+    ModifiedDate DATETIME2 DEFAULT SYSUTCDATETIME()
+); 
