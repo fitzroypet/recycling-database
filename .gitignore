@@ -1,0 +1,26 @@
+# Database files
+*.mdf
+*.ldf
+*.ndf
+
+# User-specific files
+*.user
+*.suo
+
+# VS Code specific files
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Environment files
+.env
+*.env.local
+
+# Logs
+*.log
+
+# Backup files
+*.bak
+*.backup
