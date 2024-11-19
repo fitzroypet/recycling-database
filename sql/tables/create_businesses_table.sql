@@ -12,7 +12,9 @@ CREATE TABLE recycling.Businesses (
     LastUpdated DATETIME2 DEFAULT SYSUTCDATETIME(),
     IsActive BIT DEFAULT 1,
     DeletedAt DATETIME2 NULL,
-    DeletedBy NVARCHAR(128) NULL
+    DeletedBy NVARCHAR(128) NULL,
+    SearchVector NVARCHAR(MAX), -- For full-text search
+    ServiceKeywords NVARCHAR(MAX) -- JSON array of keywords
 );
 
 -- Create indexes for better search performance

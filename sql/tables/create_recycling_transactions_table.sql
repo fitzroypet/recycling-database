@@ -3,7 +3,6 @@ CREATE TABLE recycling.RecyclingTransactions (
     BusinessID INT FOREIGN KEY REFERENCES recycling.Businesses(BusinessID),
     UserID INT FOREIGN KEY REFERENCES recycling.Users(UserID),
     TransactionDate DATETIME2 DEFAULT SYSUTCDATETIME(),
-    TransactionType NVARCHAR(20), -- 'DROPOFF', 'PICKUP', 'PURCHASE'
     PaymentAmount DECIMAL(10,2),
     PaymentCurrency NVARCHAR(3),
     PaymentStatus NVARCHAR(20), -- 'PENDING', 'COMPLETED', 'CANCELLED'

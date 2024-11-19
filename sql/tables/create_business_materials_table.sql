@@ -1,12 +1,14 @@
 CREATE TABLE recycling.BusinessMaterials (
     BusinessID INT,
-    CategoryID INT,
+    MaterialID INT,
+    CategoryName NVARCHAR(50),
+    Description NVARCHAR(500),
     IsVerified BIT DEFAULT 0,
     VerificationSource NVARCHAR(50),
     DateVerified DATETIME2,
     PRIMARY KEY (BusinessID, CategoryID),
     FOREIGN KEY (BusinessID) REFERENCES recycling.Businesses(BusinessID),
-    FOREIGN KEY (CategoryID) REFERENCES recycling.MaterialCategories(CategoryID)
+    FOREIGN KEY (MaterialID) REFERENCES recycling.Materials(MaterialID)
 );
 
-CREATE INDEX IX_BusinessMaterials_Category ON recycling.BusinessMaterials(CategoryID); 
+CREATE INDEX IX_BusinessMaterials_Category ON recycling.BusinessMaterials(MaterialID); 

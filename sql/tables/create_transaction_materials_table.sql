@@ -1,7 +1,8 @@
-CREATE TABLE recycling.TransactionMaterials (
-    TransactionMaterialID INT IDENTITY(1,1) PRIMARY KEY,
+CREATE TABLE recycling.MaterialTransaction (
+    MaterialTransactionID INT IDENTITY(1,1) PRIMARY KEY,
     TransactionID INT FOREIGN KEY REFERENCES recycling.RecyclingTransactions(TransactionID),
-    MaterialCategoryID INT FOREIGN KEY REFERENCES recycling.MaterialCategories(CategoryID),
+    RecordID INT FOREIGN KEY REFERENCES recycling.WasteRecords(RecordID),
+    MaterialID INT FOREIGN KEY REFERENCES recycling.Materials(MaterialID),
     Quantity DECIMAL(10,2),
     Unit NVARCHAR(20),
     PricePerUnit DECIMAL(10,2),
@@ -10,4 +11,4 @@ CREATE TABLE recycling.TransactionMaterials (
     IsActive BIT DEFAULT 1,
     DeletedAt DATETIME2 NULL,
     DeletedBy NVARCHAR(128) NULL
-); 
+);

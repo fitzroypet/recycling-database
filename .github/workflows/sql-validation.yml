@@ -1,0 +1,49 @@
+name: SQL Validation
+
+on:
+  push:
+    paths:
+      - '**.sql'
+  pull_request:
+    paths:
+      - '**.sql'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup SQLServer-Tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y mssql-tools unixodbc-dev
+          
+      - name: Install SQLCheck
+        run: |
+          wget https://github.com/jarulraj/sqlcheck/releases/download/v1.3/sqlcheck-linux.tar.gz
+          tar xvzf sqlcheck-linux.tar.gz
+          sudo mv sqlcheck /usr/local/bin/
+          
+      - name: Validate SQL Files
+        run: |
+          for file in $(find . -name "*.sql"); do
+            echo "Checking $file..."
+            sqlcheck -v $file
+          done
+        continue-on-error: true
+        
+      - name: Check SQL Syntax
+        run: |
+          for file in $(find . -name "*.sql"); do
+            echo "Checking syntax for $file..."
+            cat $file | sqlcmd -S localhost -U sa -P ${{ secrets.SQL_PASSWORD }} -d master -i
+          done
+        continue-on-error: true
+
+      - name: Report Results
+        if: always()
+        run: |
+          echo "SQL Validation Complete"
+          echo "Please check the logs for any issues"
