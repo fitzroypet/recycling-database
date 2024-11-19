@@ -7,12 +7,11 @@ CREATE PROCEDURE recycling.usp_UpsertBusiness
     @Website NVARCHAR(500),
     @Rating DECIMAL(3, 2),
     @PlaceID NVARCHAR(255),
-    @Materials NVARCHAR(MAX)  -- JSON array of material categories
+    @Materials NVARCHAR(MAX),  -- JSON array of material categories
+    @BusinessID INT OUTPUT      -- Output parameter for BusinessID
 AS
 BEGIN
     SET NOCOUNT ON;
-    
-    DECLARE @BusinessID INT;
     
     -- Insert or update business
     MERGE recycling.Businesses AS target

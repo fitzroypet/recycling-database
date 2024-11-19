@@ -6,3 +6,6 @@ CREATE TABLE recycling.BusinessHours (
     CloseTime TIME,
     IsClosed BIT DEFAULT 0
 ); 
+
+-- Create an index for the BusinessHours table
+CREATE INDEX IX_BusinessHours_BusinessID ON recycling.BusinessHours(BusinessID);

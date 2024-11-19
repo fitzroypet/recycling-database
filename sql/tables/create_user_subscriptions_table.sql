@@ -9,3 +9,7 @@ CREATE TABLE recycling.UserSubscriptions (
     DeletedBy NVARCHAR(128) NULL,
     UNIQUE (UserID, BusinessID)
 ); 
+
+-- Create an index for the UserSubscriptions table
+CREATE INDEX IX_UserSubscriptions_UserID ON recycling.UserSubscriptions(UserID);
+CREATE INDEX IX_UserSubscriptions_BusinessID ON recycling.UserSubscriptions(BusinessID);
