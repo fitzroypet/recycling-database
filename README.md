@@ -64,7 +64,7 @@ git clone https://github.com/fitzroypet/recycling-database.git
 
 2. Set up the database
 
-# Execute schema creation scripts from sql/schema/
+Execute schema creation scripts from sql/schema/
 Run population scripts from sql/data/
 
 
