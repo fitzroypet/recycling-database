@@ -1,52 +1,120 @@
-# Recycling Services Database
+# Recycling Database Management System
 
-A SQL database implementation for a recycling services platform.
+A comprehensive solution for managing recycling operations, business partnerships, and user engagement in sustainable waste management.
 
-## Structure 
+## 🌟 Project Vision
 
-sql
-sql/
-├── schema/
-│ └── create_schema.sql
-├── tables/
-│ ├── create_businesses_table.sql
-│ ├── create_business_hours_table.sql
-│ ├── create_users_table.sql
-│ └── ...
-├── views/
-│ └── business_search_view.sql
-├── procedures/
-│ └── usp_upsert_business.sql
-└── tests/
-├── 1_test_users.sql
-├── 2_test_business.sql
-└── ...
+Our platform aims to bridge the gap between recycling businesses and environmentally conscious consumers by providing a robust database management system that facilitates:
+
+- AI-powered recycling guidance and assistance
+- Business-consumer connections for recycling services
+- Streamlined collection booking system
+- Efficient tracking of recycling transactions
+- Data-driven insights for sustainable waste management
+
+## 🏗️ Architecture
+
+The system is built using:
+- **Database**: Azure SQL Database
+- **API Layer**: Azure Functions & API Management
+- **Search Capability**: Azure Cognitive Search
+- **AI Assistance**: Azure OpenAI Service
+- **Authentication**: Azure AD B2C
+- **Frontend**: React
+
+## 🚀 Key Features
+
+- **AI-Powered Assistance**
+  - Conversational chatbot for recycling guidance
+  - Intelligent search for recycling information
+  - Personalized recommendations based on user preferences
+
+- **Business Management**
+  - Business registration and verification
+  - Service offerings management
+  - Operating hours tracking
+  - Materials acceptance configuration
+
+- **User Engagement**
+  - User accounts and preferences
+  - Recycling transaction recording
+  - Collection booking system
+  - Recycling alerts and notifications
+
+- **Transaction Processing**
+  - Real-time transaction recording
+  - Multiple material type support
+  - Transaction history tracking
+  - Performance analytics
 
 
-## Setup
+## 🛠️ Getting Started
 
-1. Create a new database in SQL Server
-2. Run the scripts in the following order:
-   - schema/create_schema.sql
-   - tables/*.sql
-   - views/*.sql
-   - procedures/*.sql
+### Prerequisites
+- Azure subscription
+- Node.js (v14 or higher)
+- SQL Server Management Studio or Azure Data Studio
 
-## Testing
+### Installation
 
-Run the test scripts in numerical order:
+1. Clone the repository
 
-bash
-sql/tests/1_test_users.sql
-sql/tests/2_test_business.sql
-...
+git clone https://github.com/fitzroypet/recycling-database.git
 
 
-## Features
+2. Set up the database
 
-- Business profile management
-- User management
-- Material recycling transactions
-- Collection bookings
-- Subscription system
+# Execute schema creation scripts from sql/schema/
+Run population scripts from sql/data/
 
+
+3. Configure environment variables
+
+Create .env file with necessary credentials
+
+
+## 🗺️ Roadmap
+
+### Phase 1: Foundation
+- [ ] Database setup and schema implementation
+- [ ] Core API development
+- [ ] Basic authentication
+
+### Phase 2: Integration
+- [ ] Azure services integration
+- [ ] Search functionality
+- [ ] API management
+- [ ] Azure OpenAI setup and integration
+
+### Phase 3: Enhancement
+- [ ] Frontend development
+- [ ] User experience optimization
+- [ ] Performance tuning
+- [ ] Chatbot and intelligent search implementation
+
+### Phase 4: Launch
+- [ ] Testing and quality assurance
+- [ ] Deployment
+- [ ] Documentation and training
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](docs/DEVELOPMENT_GUIDE.md) for details.
+
+## 📄 License
+
+This project is licensed under the [MIT LICENSE](LICENSE) - see the LICENSE file for details.
+
+## 📞 Support
+
+For support, please contact fitzroypetgrave@gmail.com or create an issue in the repository.
+
+## 🙏 Acknowledgments
+
+- Azure Team for cloud infrastructure
+- Contributors and maintainers
+- Partner organizations
+
+---
+
+Built with ❤️ for a sustainable future
